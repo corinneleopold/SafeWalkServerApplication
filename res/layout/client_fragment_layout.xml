@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_text"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:focusable="false"
+    android:gravity="left"
+    
+    tools:context=".MainActivity" >
+
+    <!-- TODO your layout here -->
+
+    <requestFocus />
+
+    <Button
+        android:id="@+id/bu_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:enabled="true"
+        android:gravity="center"
+        android:minHeight="60dp"
+        android:minWidth="100dp"
+        android:onClick="onSubmit"
+        android:padding="@dimen/padding"
+        android:text="@string/submit" />
+
+    <TextView
+        android:id="@+id/message1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/message2"
+        android:layout_alignStart="@+id/message2"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="50dp"
+        android:text="Preferences"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnerTo"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginBottom="26dp"
+        android:text="To"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/message2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="33dp"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/message2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/message2"
+        android:layout_toRightOf="@+id/message2"
+        android:ems="10"
+        android:hint="@string/name"
+        android:textColor="@color/white" />
+
+    <Spinner
+        android:id="@+id/spinnerTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bu_submit"
+        android:layout_marginBottom="24dp"
+        android:entries="@array/to_locations"
+        android:scrollbars="vertical" />
+
+    <Spinner
+        android:id="@+id/spinnerFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/spinnerTo"
+        android:layout_marginBottom="23dp"
+        android:entries="@array/from_locations"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnerFrom"
+        android:layout_marginBottom="32dp"
+        android:layout_toLeftOf="@+id/name"
+        android:text="From"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <RadioGroup
+        android:id="@+id/radio_group1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerFrom"
+        android:layout_below="@+id/message1"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_below="@+id/message1"
+            android:layout_marginTop="26dp"
+            android:checked="false"
+            android:text="I am a requester. Match me with volunteers only."
+            android:textColor="@color/white"
+            android:typeface="serif" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/radioButton1"
+            android:layout_below="@+id/radioButton1"
+            android:layout_marginTop="31dp"
+            android:checked="false"
+            android:text="I am a volunteer. Don&apos;t match me with another volunteer."
+            android:textColor="@color/white"
+            android:typeface="serif" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="I have no preference being a requester or a volunteer."
+            android:textColor="@color/white"
+            android:typeface="serif" />
+    </RadioGroup>
+
+</RelativeLayout>
